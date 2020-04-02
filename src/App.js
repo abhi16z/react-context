@@ -4,6 +4,7 @@ import Basic from "./Basic/Basic";
 import Dynamic from "./Dynamic/Dynamic";
 import DefaultCOnsumer from "./DefaultConsumer/DefaultProvider";
 import WithContextType from './WithContextType/WithContextType';
+import Multiple from './Multiple/Multiple';
 
 export default function App() {
   return (
@@ -11,7 +12,8 @@ export default function App() {
       <DefaultCOnsumer /> <br />
       <Basic /> <br />
       <Dynamic /> <br />
-      <WithContextType />
+      <WithContextType /> <br />
+      <Multiple />
     </div>
   );
 }
