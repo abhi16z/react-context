@@ -1,15 +1,23 @@
 import React, { useState } from "react";
 import StyleContext from "../StyleContext";
-import HookedConsumer from "./HookedConsumer";
+import MultiHookedConsumer from "./MultiHookedConsumer";
+import ButtonStyleContext from './ButtonStyleContext';
 
 const styleDefault = {
-  backgroundColor: "pink",
+  backgroundColor: "skyblue",
   borderWidth: 1,
   borderColor: "pink",
   borderStyle: "solid",
   height: 50,
   width: "90%"
 };
+
+const ButtonStyleDef = {
+  backgroundColor: 'blue',
+  color: 'white',
+  outline: 'none'
+};
+
 
 export default function App() {
   const [styleObj, setStyleObj] = useState(styleDefault);
@@ -22,7 +30,9 @@ export default function App() {
   };
   return (
     <StyleContext.Provider value={{ style: styleObj, setStyle: handleStyleUpdate }}>
-      <HookedConsumer />
+      <ButtonStyleContext.Provider value={{buttonStyle: ButtonStyleDef}}>
+        <MultiHookedConsumer />
+      </ButtonStyleContext.Provider>
     </StyleContext.Provider>
   );
 }
